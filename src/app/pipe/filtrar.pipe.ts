@@ -7,7 +7,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FiltrarPipe implements PipeTransform {
 
   transform(value: any, arg: any): any {
-
+ 
     const resultadoProducto=[];
     for(const producto of value)
     {
