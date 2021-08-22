@@ -17,9 +17,10 @@
 <br>
   <div class="contendorTabla">
     <button class="btn btn-success"  routerLink="/registraProductos">Nuevo producto</button>
-  
+     
+    <button class="btn btn-primary buscarProducto" (click)="buscarProducto()" >Buscar producto</button>
     <h5>Listado de productos</h5>
-    
+    <input type="text"  style="display: none;" [(ngModel)]="filtrarProducto" class="form-control" placeholder="Filtrar producto por nombre, marca, categoria, etc." name="filtrarProducto" id="buscarProducto"> 
     
 <table id="tablaProducto" class="table">
   
@@ -36,7 +37,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="tablaProducto" *ngFor="let producto of productos | paginate: { itemsPerPage: 10, currentPage: paginaActual }; let i= index "   >
+      <tr class="tablaProducto" *ngFor="let producto of productos | filtrar:filtrarProducto  | paginate: { itemsPerPage: 10, currentPage: paginaActual }; let i= index "   >
         <th style="display:none;" > {{producto.id}}</th>
         <th style="display:none;" > {{producto.idCat}}</th>
         <th style="display:none;" > {{producto.idMarca}}</th>

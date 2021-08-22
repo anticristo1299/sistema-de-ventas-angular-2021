@@ -16,6 +16,8 @@ declare var jQuery:any;
 })
 export class TablaComponent implements OnInit {
   paginaActual:number=1;
+  clickSearch:boolean=false;
+  filtrarProducto="";
   constructor(private _servicioProducto:ProductosService,private router:Router ,
     private bnIdle: BnNgIdleService,private loginC:LoginComponent) {
       this.bnIdle.startWatching(3000).subscribe((res) => {
@@ -51,7 +53,21 @@ export class TablaComponent implements OnInit {
     
     
   }
-  
+  buscarProducto()
+  {
+    if(this.clickSearch==false)
+    {
+      setTimeout(function(){ $('#buscarProducto').show(1500);  }, 0)
+      this.clickSearch=true;
+    }
+    else
+    {
+      setTimeout(function(){ $('#buscarProducto').hide(1500);  }, 0)
+      this.clickSearch=false;
+    }
+
+
+  }
 obtenerProductos()
 {
   this._servicioProducto.obtenerProductos().subscribe(productos => {

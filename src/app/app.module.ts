@@ -19,6 +19,7 @@ import { EditarProductoComponent } from './componentes/editar-producto/editar-pr
 import { BnNgIdleService } from 'bn-ng-idle';
 import { LoginComponent } from './componentes/login/login.component'; // import bn-ng-idle service
 import {NgxPaginationModule} from 'ngx-pagination';
+import { FiltrarPipe } from './pipe/filtrar.pipe'; 
 const rutas: Routes =[  
 {
   path:'tabla',
@@ -48,7 +49,8 @@ const rutas: Routes =[
     RegistraProductosComponent,
     UsuarioComponent,
     EditarProductoComponent,
-    LoginComponent
+    LoginComponent,
+    FiltrarPipe
     
   ],
   exports:[
