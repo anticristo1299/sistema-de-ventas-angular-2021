@@ -1,0 +1,17 @@
+.exitoProducto{
+    background-color: #24D98A;
+    color: whitesmoke;
+    
+}
+
+  .bordeForm{
+    padding: 2%;
+    box-shadow: 3px 5px 25px 9px rgb(0 0 0 / 20%);
+  }
+  .cerrarAlert:hover{
+cursor: pointer;
+
+  }
+  .cerrarAlert{
+    margin-left: 790px;
+  }

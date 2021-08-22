@@ -1,0 +1,15 @@
+.headerTable{
+    background-color: #F4F4F4;
+}
+.header-Container{
+    background-color: #FCFCFC;
+}
+.contendorTabla{
+    padding: 2%;
+    background-color: white;
+   
+    box-shadow: 3px 5px 25px 9px rgb(0 0 0 / 20%);
+}
+body{
+    background-color: white;
+}

@@ -1,0 +1,65 @@
+<app-header titulo="Editar Productos"></app-header>
+<div class="container"> 
+    <br>
+    <div style="display: none;" id="productoEditado" >
+  <div   class="alert alert-success d-flex align-items-center  exitoProducto" role="alert">
+      
+          <i class="fa fa-check  " style="font-size: 25px;"></i>
+        Producto modificado exitosamente!
+       <!-- <i class="fa fa-times-circle cerrarAlert " align="right" ></i>-->
+  
+  
+    </div>
+  
+  </div>
+  <div class=" bordeForm"> <h1><span style="font-size: 25px;">Complete el formulario</span></h1> 
+      <form   >
+        <br>
+        <input type="text"  hidden class="form-control"  id="idProducto"  value="{{productosEditar.id}}"> 
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Nombre del Producto </label>
+            <input type="text" class="form-control"  id="txtProducto"  value="{{productosEditar.producto}}"> 
+            
+          </div>
+
+     
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Precio</label>
+            <input type="text"   class="form-control" id="txtPrecio"  value="{{productosEditar.precio}}">
+             
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Stock</label>
+            <input type="text"    class="form-control" id="txtStock"  value="{{productosEditar.stock}}">
+            
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Categorias</label>
+              <select name="comboboxCategoria"  id="cmbCategoria" (change)="capturarIdCat()" class="form-select col-md-1" style="width: 300px;" aria-label=".form-select-lg example">
+                  <option selected [value]="productosEditar.idCat" >{{productosEditar.categoria}}</option>
+                  <option *ngFor="let cat of categorias" [value]="cat.id"  >{{cat.categorias}}</option>
+   
+                </select>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Marcas</label>
+              <select class="form-select col-md-1" name="cmbMarca" id="cmbMarca"  style="width: 300px;" aria-label=".form-select-lg example">
+                  <option id="cmbCatSelecccionado" [value]="productosEditar.idMarca" selected >{{productosEditar.marca}}</option>
+                  <option *ngFor="let mar of marcas" [value]="mar.id">{{mar.marcas}}</option>
+                </select>
+          </div>
+         
+          <button type=""  (click)="animacionAlert() ; editarProducto()" class="btn btn-primary ">Modificar</button>
+        </form>
+     
+      </div>
+  </div>
+   
+  <form>
+    <br>
+    
+    
+    
+   
