@@ -39,7 +39,7 @@
     <tbody>
       <tr class="tablaProducto" *ngFor="let producto of productos | filtrar:filtrarProducto  | paginate: { itemsPerPage: 10, currentPage: paginaActual }; let i= index "   >
         <th style="display:none;" > {{producto.id}}</th>
-        <th style="display:none;" > {{producto.idCat}}</th>
+        <th style="display:none;" > {{producto.idCat}}</th> 
         <th style="display:none;" > {{producto.idMarca}}</th>
         <th scope="col" class="productos">{{producto.producto}} </th>
         <th scope="col" class="categoria">{{producto.categoria}} </th>
